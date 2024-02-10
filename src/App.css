@@ -1,0 +1,105 @@
+header {
+	background-color: #81b3e2;
+	/* color: #23425e; */
+	padding: 0.5em 1em;
+}
+h1, h2, h3 { margin: 0; }
+p { margin: 0.5em 0em; }
+/* header h1 { margin: 0; } */
+main {
+	background-color: #bcd6ee;
+	/* color: #23425e; */
+	padding: 0.5em 1em;
+	flex-grow: 1;
+	position: relative;
+}
+#root > * {
+	height: 100vh;
+}
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1em;
+}
+input[type="date"] {
+	font-size: 100%;
+	width: 10em;
+}
+
+button {
+	font-size: 100%;
+	border-radius: 0.4em;
+	border: 1px solid rgb(121, 43, 173);
+	background-color: rgb(121, 43, 173);
+	color: rgb(238, 219, 253);
+	padding: 0.5em 2em;
+	transition: 0.4s all;
+	margin: 2px;
+}
+button:hover {
+	cursor: pointer;
+	/* border: 1px solid rgb(121, 43, 173); */
+	background-color: rgb(159, 79, 212);
+}
+button:disabled {
+	background-color: rgb(157, 142, 168);
+	border-color: rgb(157, 142, 168);
+	color: white;
+}
+
+.framed {
+	border: 1px solid rgb(7, 5, 82);
+	border-radius: 0.25em;
+	padding: 0.25em 1em;
+}
+
+hr {
+	margin: 1em 0;
+}
+
+.sprint-ceremony {
+	/* overlay */
+	/* background: gray; */
+	/* opacity: 0.5; */
+	width: 90%;
+	cursor: pointer;
+}
+
+.time-up {
+	background-color: rgb(217, 133, 164);
+}
+
+.spacious p {
+	margin-bottom: 1.5em;
+	/* border-left: 0.5em solid rgb(51, 67, 149); */
+	padding-left: 1em;
+	position: relative;
+}
+.spacious p::before {
+	/* z-index: 100; */
+	content: '';
+	position: absolute;
+	left: -0.5em;
+	width: 1em;
+	height: 100%;
+	box-sizing: border-box;
+	border: 0.15em solid rgb(51, 67, 149);
+	transition: 0.3s all linear;
+}
+.spacious p:hover::before {
+	background-color: rgb(51, 67, 149);
+}
+.spacious p:nth-child(odd)::before {
+	border-color: rgb(124, 59, 156);
+}
+.spacious p:hover:nth-child(odd)::before {
+	background-color: rgb(124, 59, 156);
+}
+/* .spacious p:nth-child(odd) {
+	border-color: rgb(124, 59, 156);
+} */
