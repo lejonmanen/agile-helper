@@ -1,23 +1,26 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Planning = ({ whenDone }) => {
-	console.log('in planning');
+	// console.log('in planning');
+	const { t } = useTranslation()
+
 	return (
 		<dialog className="sprint-ceremony spacious" open>
-			<h2> Sprint planning </h2>
-			<p> 1. Open the product backlog. Make sure that all user stories (and non-functional requirements) are sorted in descending order on priority - most important at the top. </p>
+			<h2> {t('p1')} </h2>
+			<p> {t('p2')} </p>
 
-			<p> 2. Create an empty sprint backlog. </p>
+			<p> {t('p3')} </p>
 
-			<p> 3. Calculate how many man-hours your team has together in the upcoming sprint. </p>
+			<p> {t('p4')} </p>
 
-			<p> 4. Estimate the time required to implement the first user story. You may use paper cards with numbers, or a digital tool such as <a href="https://planningpokeronline.com/" target="_blank">Planning poker online</a>. </p>
+			<p> {t('p5')} <a href="https://planningpokeronline.com/" target="_blank">{t('p6')}</a>. </p>
 
-			<p> 5. Subtract your total sprint time from (3) and move the user story to the sprint backlog. If you have time left, repeat from (4). </p>
+			<p> {t('p7')} </p>
 
-			<p> 6. When your time is up, you should have estimated as many user stories as you think you are likely to have time for. Most teams estimate a few more, just to have a buffer, but let the stories stay in the product backlog. </p>
+			<p> {t('p8')} </p>
 
-			<button onClick={whenDone}> Ok we're done. Start the sprint! </button>
+			<button onClick={whenDone}> {t('p9')} </button>
 		</dialog>
 	)
 }

@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Standup = ({ whenDone }) => {
 	const [isStarted, setIsStarted] = useState(false)
 	const [displayTime, setDisplayTime] = useState('--:--')
 	const timeRef = useRef('--:--')
 	const mountedRef = useRef(true)
+	const { t } = useTranslation()
 
 	const startTimer = () => {
 		const speedup = 1  // increase to test the timer
@@ -41,23 +43,23 @@ const Standup = ({ whenDone }) => {
 
 	return (
 		<dialog className="sprint-ceremony" open>
-			<h2> Daily standup </h2>
-			<p> Everyone stand up! </p>
-			<p> This meeting should be kept short, typially 5-10 minutes at the most. Save any discussions until after the meeting. </p>
+			<h2> {t('d1')} </h2>
+			<p> {t('d2')} </p>
+			<p> {t('d3')} </p>
 
-			<p> Scrum master asks every team member, including themselves: </p>
+			<p> {t('d4')} </p>
 			<ol>
-				<li> What have you done since last standup? </li>
-				<li> What are you going to do until next standup? </li>
-				<li> Are there any obstacles? </li>
+				<li> {t('d5a')} </li>
+				<li> {t('d5b')} </li>
+				<li> {t('d5c')} </li>
 			</ol>
 
-			<button disabled={isStarted} onClick={startTimer}> Start the standup: 10 minutes </button>
-			<p> Time left: <span className={timeClass}>{displayTime}</span> </p>
+			<button disabled={isStarted} onClick={startTimer}> {t('d6')} </button>
+			<p> {t('d7')} <span className={timeClass}>{displayTime}</span> </p>
 
 			<hr/>
 
-			<button onClick={whenDone}> Ok we're done! </button>
+			<button onClick={whenDone}> {t('d8')} </button>
 		</dialog>
 	)
 }

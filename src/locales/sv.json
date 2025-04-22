@@ -1,0 +1,58 @@
+{
+	"pick-day": "Vilken dag under sprinten är det?",
+	"pick-first": "Första",
+	"pick-middle": "Någonstans mitt i",
+	"pick-last": "Sista",
+
+	"pick-restart": "Välj dag",
+
+	"start-planning-1": "Börja sprinten med",
+	"start-planning-2": "Sprint planning",
+	"start-standup-1": "Börja varje dag med",
+	"start-standup-2": "Daily standup",
+	"review-1": "Presentera ert arbete för produktägaren under",
+	"review-2": "Sprint review",
+	"retro-1": "Avsluta sprinten med att utvärdera ert arbete i",
+	"retro-2": "Sprint retrospective",
+
+	"p1": "Sprint planning",
+	"p2": "1. Öppna product backlog. Se till att alla user stories (och icke-funktionella krav) är sorterade i fallande ordning på prioritet - de viktigaste överst.",
+	"p3": "2. Skapa en tom sprint backlog.",
+	"p4": "3. Räkna ut hur många mantimmar ditt team har sammanlagt under den kommande sprinten.",
+	"p5": "4. Uppskatta tiden som krävs för att implementera första user storyn. Ni kan använda kort med siffror, eller ett digitalt verktyg som",
+	"p6": "Planning poker online",
+	"p7": "5. Dra ifrån tiden från teamets sammanlagda tid under sprinten (3) och flytta user storyn till sprint backlog. Om teamet har tid kvar, upprepa från (4).",
+	"p8": "6. När det inte finns några timmar kvar, ska ni ha uppskattat så många user stories som ni har möjlighet att hinna med. De flesta team uppskattar några extra, för att ha en buffert, men låter dessa stories stanna kvar i product backlog.",
+	"p9": "Nu är vi klara. Börja sprinten!",
+
+	"d1": "Daily standup",
+	"d2": "Alla som kan står upp!",
+	"d3": "Det här mötet bör vara kort, normalt 5-10 minuter som längst. Spara eventuella diskussioner till efter mötet.",
+	"d4": "Scrum master frågar varje teammedlem, inklusive sig själv:",
+	"d5a": "Vad har du gjort sedan förra standup?",
+	"d5b": "Vad ska du göra till nästa standup?",
+	"d5c": "Finns det något som hindrar dig?",
+	"d6": "Börja mötet: 10 minuter",
+	"d7": "Tid kvar:",
+	"d8": "Nu är mötet slut!",
+
+	"rv1": "Sprint review",
+	"rv2": "Visa upp arbetet som ni gjort under sprinten for produktägaren och andra intressenter.",
+	"rv3": "Ni bestämmer hur ni vill presentera det - Scrum har inga regler för hur mötet ska gå till.",
+	"rv4": "Sprint retrospective börjar direkt efter det här mötet. Sedan börjar nästa sprint.",
+	"rv5": "Ok vi är klara. Dags för retrospective!",
+
+	"rt1": "Sprint retrospective",
+	"rt2a": "Teamet ser tillbaka på den gångna sprinten och utvärderas sitt arbete. Scrum master frågar följande frågor, som vem som helst i teamet får svara på. (Olikt daily standup, där",
+	"rt2b": "alla måste",
+	"rt2c": "svara.)",
+	"rt3": "Ett nytt team borde ha mycket att prata om på sina retrospectives. Allteftersom ni arbetar tillsammans, kan ni upptäcka att retrospective-mötena blir kortare och kortare. Men strunta inte helt i dem.",
+	"rt4": "Scrum master frågar hela teamet:",
+	"rt5a": "Vad ska vi börja göra?",
+	"rt5b": "Vad ska vi sluta göra?",
+	"rt5c": "Vad ska vi fortsätta göra?",
+	"rt6": "Förklaring: teamet bör vara nyfiket och prova nya sätt att arbeta på. När man har försökt och upptäckt att något inte fungerade, då slutar man med det. Det är också viktigt att uppmärksamma de saker som fungerade bra.",
+	"rt7": "Nästa sprint börjar direkt efter det här mötet.",
+	"rt8": "Sprinten är färdig"
+
+}

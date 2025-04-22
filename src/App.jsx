@@ -5,6 +5,8 @@ import Standup from './sprint/Standup.jsx'
 import Planning from './sprint/Planning.jsx'
 import Review from './sprint/Review.jsx'
 import Retrospective from './sprint/Retrospective.jsx'
+import { useTranslation } from 'react-i18next'
+import LanguagePicker from './LanguagePicker.jsx'
 
 function App() {
 	const [dayType, setDayType] = useState('undecided')
@@ -12,37 +14,38 @@ function App() {
 	const [showStandup, setShowStandup] = useState(false)
 	const [showReview, setShowReview] = useState(false)
 	const [showRetrospective, setShowRetrospective] = useState(false)
+	const { t } = useTranslation()
 
 	return (
-		<div className="flex-column">
+		<div className="flex-column app">
 			<header>
 				<h1> Agile helper </h1>
-
+				<LanguagePicker />
 			</header>
 			<main className="flex-column">
 				{dayType === 'undecided' ? (
 					<>
-					<p> What day of the sprint is it? </p>
-					<button onClick={() => setDayType('first')}> First </button>
-					<button onClick={() => setDayType('normal')}> Somewhere in the middle </button>
-					<button onClick={() => setDayType('final')}> Last </button>
+					<p> {t('pick-day')} </p>
+					<button onClick={() => setDayType('first')}> {t('pick-first')} </button>
+					<button onClick={() => setDayType('normal')}> {t('pick-middle')} </button>
+					<button onClick={() => setDayType('final')}> {t('pick-last')} </button>
 					</>
 				) : (
-					<button onClick={() => setDayType('undecided')}> Start over </button>
+					<button onClick={() => setDayType('undecided')}> {t('pick-restart')} </button>
 				)}
 				<hr/>
 
 				{dayType === 'first' && (
-					<button onClick={() => setShowPlanning(true)}> Start off the sprint with <strong>Sprint planning</strong> </button>
+					<button onClick={() => setShowPlanning(true)}> {t("start-planning-1")} <strong>{t('start-planning-2')}</strong> </button>
 				)}
 				{dayType !== 'undecided' && (
-					<button onClick={() => setShowStandup(true)}> Start every day with <strong>Daily standup</strong> </button>
+					<button onClick={() => setShowStandup(true)}> {t('start-standup-1')} <strong>{t('start-standup-2')}</strong> </button>
 				)}
 				{dayType === 'final' && (
-					<button onClick={() => setShowReview(true)}> Present your work to the product owner during <strong>Sprint review</strong> </button>
+					<button onClick={() => setShowReview(true)}> {t('review-1')} <strong>{t('review-2')}</strong> </button>
 				)}
 				{dayType === 'final' && (
-					<button onClick={() => setShowRetrospective(true)}> End the sprint by evaluating your work in <strong>Sprint retrospective</strong> </button>
+					<button onClick={() => setShowRetrospective(true)}> {t('retro-1')} <strong>{t('retro-2')}</strong> </button>
 				)}
 
 

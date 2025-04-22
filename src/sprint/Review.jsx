@@ -1,17 +1,18 @@
-import { useState } from 'react'
+import { useTranslation } from "react-i18next"
 
 const Review = ({ whenDone }) => {
+	const { t } = useTranslation()
 
 	return (
 		<dialog className="sprint-ceremony" open>
-			<h2> Sprint review </h2>
-			<p> Display your work for the product owner and other stakeholders.</p>
+			<h2> {t('rv1')} </h2>
+			<p> {t('rv2')} </p>
 
-			<p> You decide how you want to present it - there are no scrum rules to this meeting. </p>
+			<p> {t('rv3')} </p>
 
-			<p> The next sprint starts directly after this meeting. </p>
+			<p> {t('rv4')} </p>
 
-			<button onClick={whenDone}> Ok we're done. Onwards to retrospective! </button>
+			<button onClick={whenDone}> {t('rv5')} </button>
 		</dialog>
 	)
 }

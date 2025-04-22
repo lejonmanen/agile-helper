@@ -2,7 +2,28 @@ header {
 	background-color: #81b3e2;
 	/* color: #23425e; */
 	padding: 0.5em 1em;
+	display: flex;
+	align-items: center;
+
+	h1 { flex-grow: 1; }
+
+	.pick-language {
+		display: flex;
+		gap: 0.5em;
+		/* border: 1px dotted black; */
+		img {
+			transition: all 0.4s;
+			width: 1.5em;
+
+			&:hover {
+				cursor: pointer;
+				box-shadow: 0 0 4px rgb(61, 61, 61);
+			}
+		}
+	}
 }
+
+
 h1, h2, h3 { margin: 0; }
 p { margin: 0.5em 0em; }
 /* header h1 { margin: 0; } */
@@ -13,8 +34,8 @@ main {
 	flex-grow: 1;
 	position: relative;
 }
-#root > * {
-	height: 100vh;
+.app {
+	min-height: 100vh;
 }
 .flex-column {
 	display: flex;
@@ -103,3 +124,4 @@ hr {
 /* .spacious p:nth-child(odd) {
 	border-color: rgb(124, 59, 156);
 } */
+
