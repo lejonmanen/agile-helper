@@ -4,7 +4,11 @@
 	"pick-middle": "Någonstans mitt i",
 	"pick-last": "Sista",
 
-	"pick-restart": "Välj dag",
+	"pick-restart": "Välj en annan dag",
+
+	"day-first": "Första dagen i sprinten.",
+	"day-normal": "Mitt i sprinten.",
+	"day-final": "Sista dagen i sprinten.",
 
 	"start-planning-1": "Börja sprinten med",
 	"start-planning-2": "Sprint planning",

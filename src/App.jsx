@@ -7,9 +7,10 @@ import Review from './sprint/Review.jsx'
 import Retrospective from './sprint/Retrospective.jsx'
 import { useTranslation } from 'react-i18next'
 import LanguagePicker from './LanguagePicker.jsx'
+import DayInfo from './DayInfo.jsx'
 
 function App() {
-	const [dayType, setDayType] = useState('undecided')
+	const [dayType, setDayType] = useState('undecided')  //first,normal,final,undecided
 	const [showPlanning, setShowPlanning] = useState(false)
 	const [showStandup, setShowStandup] = useState(false)
 	const [showReview, setShowReview] = useState(false)
@@ -26,13 +27,19 @@ function App() {
 				{dayType === 'undecided' ? (
 					<>
 					<p> {t('pick-day')} </p>
-					<button onClick={() => setDayType('first')}> {t('pick-first')} </button>
-					<button onClick={() => setDayType('normal')}> {t('pick-middle')} </button>
-					<button onClick={() => setDayType('final')}> {t('pick-last')} </button>
+					<button onClick={() => setDayType('first')}
+						data-testid="btn-first"> {t('pick-first')} </button>
+					<button onClick={() => setDayType('normal')}
+						data-testid="btn-middle"> {t('pick-middle')} </button>
+					<button onClick={() => setDayType('final')}
+						data-testid="btn-last"> {t('pick-last')} </button>
 					</>
 				) : (
-					<button onClick={() => setDayType('undecided')}> {t('pick-restart')} </button>
+					<button onClick={() => setDayType('undecided')}
+						data-testid="btn-restart"> {t('pick-restart')} </button>
 				)}
+
+				<DayInfo day={dayType} />
 				<hr/>
 
 				{dayType === 'first' && (

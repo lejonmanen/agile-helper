@@ -8,8 +8,12 @@ const LanguagePicker = () => {
 
 	return (
 		<div className="pick-language">
-			<img src={en} onClick={f('en')} />
-			<img src={se} onClick={f('sv')} />
+			<img src={en} onClick={f('en')}
+				role="button"
+				data-testid="language-en" />
+			<img src={se} onClick={f('sv')}
+				role="button"
+				data-testid="language-sv" />
 		</div>
 	)
 }

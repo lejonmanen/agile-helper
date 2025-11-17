@@ -4,7 +4,11 @@
 	"pick-middle": "Somewhere in the middle",
 	"pick-last": "Last",
 
-	"pick-restart": "Choose day",
+	"pick-restart": "Choose another day",
+
+	"day-first": "First day of sprint.",
+	"day-normal": "Any day during the sprint.",
+	"day-final": "Final day of the sprint.",
 
 	"start-planning-1": "Start off the sprint with",
 	"start-planning-2": "Sprint planning",
