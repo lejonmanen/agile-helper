@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import en from './flags/gb.svg'
-import se from './flags/se.svg'
+import en from '../flags/gb.svg'
+import se from '../flags/se.svg'
 
 const LanguagePicker = () => {
 	const { i18n } = useTranslation()

@@ -1,0 +1,38 @@
+.sprint-ceremony.dialog {
+	margin: 1em 0;
+	background: white;
+	border: 2px solid black;
+	padding: 0.4em 1.3em;
+	overflow: hidden;
+
+	transform-origin: top;
+	transition: all 0.5s;
+	opacity: 0;
+	transform: scaleY(0.2);
+	max-height: 0px;
+
+	&.show {
+		opacity: 1;
+		transform: scaleY(1);
+		max-height: 5000px;
+		/* animation: dialog 0.5s; */
+	}
+	/* &.closing {
+		animation: dialog 0.5s reverse;
+	} */
+
+}
+
+@keyframes dialog {
+	0% {
+		opacity: 0;
+		transform: scaleY(0);
+	}
+	25% {
+		opacity: 1;
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}

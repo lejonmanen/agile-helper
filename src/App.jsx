@@ -6,8 +6,8 @@ import Planning from './sprint/Planning.jsx'
 import Review from './sprint/Review.jsx'
 import Retrospective from './sprint/Retrospective.jsx'
 import { useTranslation } from 'react-i18next'
-import LanguagePicker from './LanguagePicker.jsx'
-import DayInfo from './DayInfo.jsx'
+import LanguagePicker from './utils/LanguagePicker.jsx'
+import DayInfo from './utils/DayInfo.jsx'
 
 function App() {
 	const [dayType, setDayType] = useState('undecided')  //first,normal,final,undecided
@@ -57,7 +57,7 @@ function App() {
 
 
 				{showPlanning && <Planning whenDone={() => setShowPlanning(false)} />}
-				{showStandup && <Standup whenDone={() => setShowStandup(false)} />}
+				<Standup show={showStandup} whenDone={() => setShowStandup(false)} />
 				{showReview && <Review whenDone={() => setShowReview(false)} />}
 				{showRetrospective && <Retrospective whenDone={() => setShowRetrospective(false)} />}
 

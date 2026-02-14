@@ -1,48 +1,40 @@
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import Dialog from './Dialog.jsx'
+import { formatTime, useTimer } from '../utils/timer.js'
 
-const Standup = ({ whenDone }) => {
+const Standup = ({ show, whenDone }) => {
 	const [isStarted, setIsStarted] = useState(false)
 	const [displayTime, setDisplayTime] = useState('--:--')
-	const timeRef = useRef('--:--')
-	const mountedRef = useRef(true)
+	const [timeIsUp, setTimeIsUp] = useState(false)
 	const { t } = useTranslation()
 
-	const startTimer = () => {
-		const speedup = 1  // increase to test the timer
-		timeRef.current = 10 * 60
-		formatTime(timeRef.current)
+	const [start, reset] = useTimer(10*60, time => {
+		setDisplayTime( formatTime(time) )
+		setTimeIsUp(time < 1)
+	})
+
+	const handleStart = () => {
 		setIsStarted(true)
-		let iid = setInterval(() => {
-			timeRef.current -= speedup
-			formatTime(timeRef.current)
-			if( timeRef.current < 1 || !mountedRef.current ) {
-				console.log('stopping timer');
-				clearInterval(iid)
-				iid = null
-				setIsStarted(false)
-			}
-		}, 1000/speedup)
+		start()
+	}
+	const handleEndMeeting = () => {
+		reset()     // reset timer
+		setIsStarted(false)
+		whenDone()  // inform parent
 	}
 
-	useEffect(() => {
-		mountedRef.current = true
-		return () => mountedRef.current = false
-	}, [])
+	// useEffect(() => {
+	// 	mountedRef.current = true
+	// 	return () => mountedRef.current = false
+	// }, [])
 
-	const formatTime = (time) => {
-		// const time = timeRef.current
-		if( (typeof time) !== 'number' ) return '--:--'
-		let sec = time % 60
-		let min = (time - sec) / 60
-		if( sec < 10 ) sec = '0' + sec
-		setDisplayTime(`${min}:${sec}`)
-	}
-	const timeIsUp = timeRef.current < 1
+
+	// const timeIsUp = timeRef.current < 1
 	const timeClass = 'framed ' + (timeIsUp ? 'time-up' : '')
 
 	return (
-		<dialog className="sprint-ceremony" open>
+		<Dialog show={show}>
 			<h2> {t('d1')} </h2>
 			<p> {t('d2')} </p>
 			<p> {t('d3')} </p>
@@ -54,18 +46,16 @@ const Standup = ({ whenDone }) => {
 				<li> {t('d5c')} </li>
 			</ol>
 
-			<button disabled={isStarted} onClick={startTimer}> {t('d6')} </button>
+			<button disabled={isStarted} onClick={handleStart}> {t('d6')} </button>
 			<p> {t('d7')} <span className={timeClass}>{displayTime}</span> </p>
 
 			<hr/>
 
-			<button onClick={whenDone}> {t('d8')} </button>
-		</dialog>
+			<button onClick={handleEndMeeting}> {t('d8')} </button>
+		</Dialog>
 	)
 }
 
-const Timer = ({ min, sec }) => {
 
-}
 
 export default Standup
