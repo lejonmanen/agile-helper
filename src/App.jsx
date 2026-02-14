@@ -56,10 +56,10 @@ function App() {
 				)}
 
 
-				{showPlanning && <Planning whenDone={() => setShowPlanning(false)} />}
+				<Planning show={showPlanning} whenDone={() => setShowPlanning(false)} />
 				<Standup show={showStandup} whenDone={() => setShowStandup(false)} />
-				{showReview && <Review whenDone={() => setShowReview(false)} />}
-				{showRetrospective && <Retrospective whenDone={() => setShowRetrospective(false)} />}
+				<Review show={showReview} whenDone={() => setShowReview(false)} />
+				<Retrospective show={showRetrospective} whenDone={() => setShowRetrospective(false)} />
 
 			</main>
 		</div>

@@ -24,13 +24,7 @@ const Standup = ({ show, whenDone }) => {
 		whenDone()  // inform parent
 	}
 
-	// useEffect(() => {
-	// 	mountedRef.current = true
-	// 	return () => mountedRef.current = false
-	// }, [])
 
-
-	// const timeIsUp = timeRef.current < 1
 	const timeClass = 'framed ' + (timeIsUp ? 'time-up' : '')
 
 	return (

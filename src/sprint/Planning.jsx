@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import Dialog from "./Dialog.jsx"
 
-const Planning = ({ whenDone }) => {
+const Planning = ({ show, whenDone }) => {
 	// console.log('in planning');
 	const { t } = useTranslation()
 
 	return (
-		<dialog className="sprint-ceremony spacious" open>
+		<Dialog show={show}>
 			<h2> {t('p1')} </h2>
 			<p> {t('p2')} </p>
 
@@ -21,7 +21,7 @@ const Planning = ({ whenDone }) => {
 			<p> {t('p8')} </p>
 
 			<button onClick={whenDone}> {t('p9')} </button>
-		</dialog>
+		</Dialog>
 	)
 }
 

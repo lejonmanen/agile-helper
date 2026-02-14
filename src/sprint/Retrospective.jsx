@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next'
+import Dialog from "./Dialog.jsx"
 
-const Retrospective = ({ whenDone }) => {
+const Retrospective = ({ show, whenDone }) => {
 	const { t } = useTranslation()
 	return (
-		<dialog className="sprint-ceremony" open>
+		<Dialog show={show}>
 			<h2> {t('rt1')} </h2>
 			<p> {t('rt3')} </p>
 
@@ -22,7 +23,7 @@ const Retrospective = ({ whenDone }) => {
 			<p> {t('rt7')} </p>
 
 			<button onClick={whenDone}> {t('rt8')} </button>
-		</dialog>
+		</Dialog>
 	)
 }
 
